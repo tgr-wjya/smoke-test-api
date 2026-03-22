@@ -1,0 +1,31 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: oven/bun:latest
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - bun-deps-{{ checksum "bun.lockb" }}
+      - run:
+          name: Install dependencies
+          command: bun ci
+      - save_cache:
+          key: bun-deps-{{ checksum "bun.lockb" }}
+          paths:
+            - node_modules
+      - run:
+          name: Run tests
+          command: bun test
+
+workflows:
+  quality-check:
+    jobs:
+      - test:
+          filters:
+            branches:
+              only:
+                - main
+                - dev
