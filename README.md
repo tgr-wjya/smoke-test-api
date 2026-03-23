@@ -14,7 +14,7 @@ the endpoints is trivial by design, and each actively verifies a different layer
 | ------------- | ----------------------------------------------------------------------------- |
 | `GET /ping` | app is running and reverse proxy is wired |
 | `GET /env` | env vars loaded (return key names + `present/missing`, never values). obviously, i'm not going to share the value of my env. |
-| `POST /echo`  | returns whatever JSON body you send it, but its mostly to make sure request body parsing and validation working as intended |
+| `POST /echo` | returns whatever JSON body you send it, but its mostly to make sure request body parsing and validation working as intended |
 | `GET /health` | uptime, timestamp, runtime info with `(Bun.version)` |
 
 ## find me

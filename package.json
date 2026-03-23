@@ -21,6 +21,6 @@
 		"biome:lint": "bunx biome lint",
 		"biome:format": "bunx biome format --write",
 		"biome:ci": "bunx biome ci",
-		"dev": "doppler run -- bun --watch index.ts"
+		"dev": "bun --watch index.ts"
 	}
 }
