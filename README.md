@@ -1,5 +1,9 @@
 # smoke-test-api
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/tgr-wjya/smoke-test-api/ci.yml)
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/85F8zZ7ostSSLjq88Rwb8X/FyCpHdGwf4qwgyor3GpyEo/tree/prod.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/85F8zZ7ostSSLjq88Rwb8X/FyCpHdGwf4qwgyor3GpyEo/tree/prod)
+[![codecov](https://codecov.io/gh/tgr-wjya/smoke-test-api/graph/badge.svg?token=lg9mhwv2iE)](https://codecov.io/gh/tgr-wjya/smoke-test-api)
+
 ### 23 march 2026
 
 > initial project deployment to my azure vm dokploy.
