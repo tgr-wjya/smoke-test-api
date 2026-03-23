@@ -26,12 +26,32 @@ jobs:
       - run:
           name: Install curl
           command: apt-get update -y && apt-get install -y curl gpg
-      - codecov/upload
+      - codecov/upload:
+          files: coverage/lcov.info
+
+  deploy:
+    docker:
+      - image: oven/bun:latest
+    steps:
+      - run:
+          name: Install curl
+          command: apt-get update -y && apt-get install -y curl
+      - run:
+          name: Trigger Dokploy deployment
+          command: curl -X POST $DOKPLOY_WEBHOOK_URL
 
 workflows:
   quality-check:
     jobs:
       - test:
+          filters:
+            branches:
+              only:
+                - main
+                - dev
+      - deploy:
+          requires:
+            - test
           filters:
             branches:
               only:

@@ -1,5 +1,7 @@
 # smoke-test-api
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/85F8zZ7ostSSLjq88Rwb8X/FyCpHdGwf4qwgyor3GpyEo/tree/prod.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/85F8zZ7ostSSLjq88Rwb8X/FyCpHdGwf4qwgyor3GpyEo/tree/prod)
+
 ### 23 march 2026
 
 > initial project deployment to my azure vm dokploy.
