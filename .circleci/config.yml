@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  codecov: codecov/codecov@5.4.3
+
 jobs:
   test:
     docker:
@@ -11,14 +14,15 @@ jobs:
             - bun-deps-{{ checksum "bun.lockb" }}
       - run:
           name: Install dependencies
-          command: bun ci
+          command: bun install --frozen-lockfile
       - save_cache:
           key: bun-deps-{{ checksum "bun.lockb" }}
           paths:
             - node_modules
       - run:
-          name: Run tests
-          command: bun test
+          name: Run tests with coverage
+          command: bun test --coverage --coverage-reporter=lcov
+      - codecov/upload
 
 workflows:
   quality-check:
